@@ -1,1 +1,235 @@
-file:///C:/Users/willi/OneDrive/Documentos/PROGRAMA%C3%87%C3%83O/HTML%20E%20CSS/PORTFOLIO/index.html
+<!doctype html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Willian - portfólio</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #ffffff00;
+            color: #ffffff;
+            background: url("https://jdi.epam.com/content/dam/epam-jdi/iStock_000077392727_Large1.jpg/_jcr_content/renditions/original./iStock_000077392727_Large1.jpg") no-repeat center center fixed;
+            background-size: cover;
+        }
+
+        header {
+            background: #fefefe00;
+            color: rgb(255, 255, 255);
+            padding: 20px;
+            text-align: center;
+            padding: 2rem 1rem;
+        }
+
+        header p {
+            margin: 0.5rem 0;
+            font-size: 1.2rem;
+            color: #ffffff;
+        }
+        a {
+            color: #e5ff00;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        section {
+            max-width: 500px;
+            margin: 2rem auto;
+            padding: 1rem;
+            background: rgba(0, 0, 0, 0.305);
+            border-radius: 8px;
+            box-shadow: 0 2px 6px rgb(0, 162, 255);
+        }
+        section h2 {
+           border-left: 4px solid #fcfcfc;
+           padding-left: 10px;
+           color: #ffffff;
+        }
+        #about p {
+            font-weight: bold;
+        }
+
+        #projects {
+            background-color: rgba(0, 0, 0, 0.305);
+            padding: 20px;
+            margin: 20px;
+            border-radius: 15px;
+            text-align: center;
+        }
+        .project-card {
+            background-color: rgba(0, 0 , 0, 0.305);
+            color: white;
+            padding: 20px;
+            margin: 20px auto;
+            border-radius: 10px;
+            max-width: 600px;
+            box-shadow: 0px 4px 10px rgba(0, 0 , 0, 0.305)
+        }
+        .project-card a {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 10px 15px;
+            background-color: #00000092;
+            color: #e5ff00;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: background 0.3s;
+        }
+        .project-card a:hover {
+            background-color: #1a75ff;
+        }
+
+        #contact {
+            max-width: 400px;            /* mesma largura do Sobre mim */
+            margin: 2rem auto;           /* centraliza */
+            padding: 0.5rem;
+            background: rgba(0, 0, 0, 0.305);
+            border-radius: 8px;
+            box-shadow: 0 2px 6px rgb(0, 162, 255);
+            text-align: center;
+        }
+
+        .contact-links a {
+            display: inline-flex;
+            margin: 1.0rem auto;
+            padding: 10px 20px;
+            background-color: #00000092;
+            border-radius: 8px;
+            color: #e5ff00;
+            text-decoration: none;
+            transition: background 0.3s;            
+        }
+
+        .contact-links a:hover {
+            background-color: #1a75ff;
+        }
+        .contact-links a i {
+            margin-right: 8px;
+            font-size: 18px;
+        }
+
+        footer {
+            background-color: rgba(0, 0, 0, 0.718);
+            color: #fffafa;
+            text-align: center;
+            padding: 15px;
+            border-top: 2px solid #00000000;
+
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            transition: transform 1.0s ease;
+        }
+        .hidden-footer {
+            transform: translateY(100%);
+        }
+
+        body{
+            margin-bottom: 60px;
+        }
+
+        footer a {
+            color: #e5ff00;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+        footer a:hover {
+            color: #1a75ff;
+        }
+
+        .card {
+            background-color: rgba(0, 0, 0, 0.305);
+            border-radius: 15px;
+            padding: 20px;
+            margin: 20px auto;
+            max-width: 600px;
+            text-align: center;
+            box-shadow: 0px 4px 10px rgba(0, 0 , 0, 0.305);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card:hover {
+            transform: scale(1.05);
+            box-shadow: 0px 8px 20px rgba(0, 0 , 0, 0.305);
+        }
+
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head> 
+<body>
+
+    <header>
+    <h1>Willian Vitor</h1>
+    <p>Estudante de Ciência da Computação | futuro Cybersecurity Analyst</p>
+    <p>Para mais informações, visite meu <a href="https://www.linkedin.com/in/willian-vitor-silva-genuino-9b377b281">LinkedIn</a>.</p>
+    <a href="#projects">projetos⬇</a></li>
+    <a href="#contact">Contato⬇</a></li>
+    </header>
+
+
+    <footer>
+    <p>© 2025 Willian Vitor. Todos os direitos reservados.</p>
+        <p>
+            <a href="#about">Sobre Mim</a> |
+            <a href="#projects">Projetos</a> |
+            <a href="#contact">Contato</a>
+        </p>
+    </footer>
+
+    <script>
+        let lastScroll = 0;
+        const footer = document.querySelector('footer');
+
+        window.addEventListener("scroll", () => {
+            const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+            if (currentScroll > lastScroll) {
+                footer.classList.add('hidden-footer');
+            } else {
+                footer.classList.remove('hidden-footer');
+            }
+            lastScroll = currentScroll;
+        });
+    </script>
+
+</body>
+
+
+<section>
+    <h2>Sobre Mim</h2>
+    <p>Sou apaixonado por tecnologia, especialmente em áreas como segurança da informação, Desenvolvimento Web, Desenvolvimento de Software, IA e Data Science. Atualmente estudo Ciência da Computação na FPB e adoro criar projetos práticos para aprender cada vez mais.</p>
+</section>
+
+
+<section id="projects">
+    <h2>Meu projeto</h2>
+
+    <div class="project-card">
+        <h3>Sistema Acadêmico</h3>
+        <p>Projeto em Python com SQLite para gerenciar alunos, professores e disciplinas.</p>
+        <a href="https://github.com/willcodeTI/sistema-academico.git" target="_blank">Ver no GitHub</a>
+    </div>
+</section>
+
+<section id="contact">
+
+        <div class="contatos">
+            <p> Entre em contato comigo através dos links abaixo:</p>
+
+
+        <div class="contact-links">
+
+            <a href="https://www.linkedin.com/in/willian-vitor-silva-genuino-9b377b281" target="_blank">LinkedIn</a>
+                <i class="fab fa-linkedin"></i>
+
+            <a href="https://github.com/willcodeTI" target="_blank">GitHub</a>
+                <i class="fab fa-github"></i>
+
+            <a href="mailto:willianvt2005@gmail.com">Email</a>
+                <i class="fas fa-envelope"></i>
+            </a>
+        </div>
+    </div>
+</section>
+</html>
