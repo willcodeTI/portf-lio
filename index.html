@@ -3,13 +3,14 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Willian - portfólio</title>
+    <title>Portfólio de Willian vitor | Desenvolvedor e Estudante de Ciência da Computação</title>
     <style>
         html, body {
+            scroll-behavior: smooth;
             min-height: 100vh;
             margin: 0;
             padding: 0;
-            background-color: black;
+            background-color: rgba(0, 0, 0, 0);
             overflow-x: hidden;
         }
         body {
@@ -47,9 +48,9 @@
             max-width: 500px;
             margin: 2rem auto;
             padding: 1rem;
-            background: rgba(0, 0, 0, 0.305);
+            background: rgba(0, 0, 0, 0);
             border-radius: 8px;
-            box-shadow: 0 2px 6px rgb(0, 162, 255);
+            box-shadow: 0 2px 6px #00a2ff00;
         }
         section h2 {
            border-left: 4px solid #fcfcfc;
@@ -61,21 +62,39 @@
         }
 
         #projects {
-            background-color: rgba(0, 0, 0, 0.305);
-            padding: 20px;
-            margin: 20px;
-            border-radius: 15px;
-            text-align: center;
+            max-width: 1000px;          /* largura maior para os projetos */
+            margin: 2rem auto;           /* centraliza */
         }
+        .projects-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            justify-items: center;
+            width: 100%;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
         .project-card {
-            background-color: rgba(0, 0 , 0, 0.305);
+            background-color: #00000099;
             color: white;
             padding: 20px;
-            margin: 20px auto;
             border-radius: 10px;
-            max-width: 600px;
-            box-shadow: 0px 4px 10px rgba(0, 0 , 0, 0.305)
+            box-shadow: 0px 4px 10px #00a2ff;
+            max-width: 350px;
+            width: 100%;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            
         }
+
+
+        .project-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0px 8px 20px rgba(0, 0 , 0, 0.305);
+        }
+
+
         .project-card a {
             display: inline-block;
             margin-top: 10px;
@@ -90,14 +109,21 @@
             background-color: #1a75ff;
         }
 
+
         #contact {
-            max-width: 400px;            /* mesma largura do Sobre mim */
+            max-width: 400px;            /* largura menor para o contato */
             margin: 2rem auto;           /* centraliza */
-            padding: 0.5rem;
-            background: rgba(0, 0, 0, 0.305);
+            padding: 1rem;
+            background: #00000099;
             border-radius: 8px;
             box-shadow: 0 2px 6px rgb(0, 162, 255);
             text-align: center;
+        }
+
+        .contatos p {
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+            color: #ffffff;
         }
 
         .contact-links a {
@@ -163,6 +189,34 @@
             transform: scale(1.05);
             box-shadow: 0px 8px 20px rgba(0, 0 , 0, 0.305);
         }
+        .about-container {
+            max-width: 900px;
+            margin: 0.5rem auto;
+            padding: 1rem;
+            color: white;
+            text-align: left;
+            
+        }
+        .about-container h2 {
+            border-left: 4px solid #fcfcfc;
+            padding-left: 10px;
+            color: #ffffff;
+        }
+        .about-container p {
+            font-weight: bold;
+            background: none;
+        }
+
+        .about-container ul {
+            list-style: none;
+            padding-left: 0px;
+        }
+
+        .about-container li::before {
+            content: "• ";
+            color: #00c3ff;
+            font-weight: bold;
+        }
 
     </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
@@ -173,9 +227,67 @@
     <h1>Willian Vitor</h1>
     <p>Estudante de Ciência da Computação | Tecnologia e Inovação: Desenvolvimento Web, Inteligência Artificial e Análise de Dados</p>
     <p>Para mais informações, visite meu <a href="https://www.linkedin.com/in/willian-vitor-silva-genuino-9b377b281">LinkedIn</a>.</p>
-    <a href="#projects">projetos⬇</a></li>
-    <a href="#contact">Contato⬇</a></li>
+    <a href="#projects">projetos⬇</a>
+    <a href="#contact">Contato⬇</a>
     </header>
+
+
+
+    <div id="about" class="about-container">
+        <h2>Sobre Mim</h2>
+        <p>Sou apaixonado por tecnologia, especialmente em áreas como segurança da informação, Desenvolvimento Web, Desenvolvimento de Software, IA e Data Science. Atualmente estudo Ciência da Computação na FPB e adoro criar projetos práticos para aprender cada vez mais.</p>
+
+        <h3>Habilidades Técnicas</h3>
+        <ul>
+            <li>Python, FastAPI, SQLite</li>
+            <li>HTML, CSS, JavaScript</li>
+            <li>Backend e Inteligência Artificial</li>
+        </ul>
+    </div>
+    
+    </section>
+
+
+    <section id="projects">
+        <h2>Meus projetos</h2>
+
+        <div class="projects-container">
+            <div class="project-card">
+                <h3>Sistema Acadêmico</h3>
+                <p>Projeto em Python com SQLite para gerenciar alunos, professores e disciplinas.</p>
+                <a href="https://github.com/willcodeTI/sistema-academico.git" target="_blank">Ver no GitHub</a>
+            </div>
+
+
+            <div class="project-card">
+                <h3>API de Ecommerce</h3>
+                <p>API RESTful desenvolvida com FastAPI para gerenciar um e-commerce básico.</p>
+                <a href="https://github.com/willcodeTI/api-ecommerce.git" target="_blank">Ver no GitHub</a>
+            </div>
+        </div>
+    </section>
+
+
+
+    <section id="contact">
+        <div class="contatos">
+            <p> Entre em contato comigo através dos links abaixo:</p>
+
+            <div class="contact-links">
+                <a href="https://www.linkedin.com/in/willian-vitor-silva-genuino-9b377b281" target="_blank">LinkedIn</a>
+                    <i class="fab fa-linkedin"></i>
+
+                <a href="https://github.com/willcodeTI" target="_blank">GitHub</a>
+                    <i class="fab fa-github"></i>
+
+                <a href="mailto:willianvt2005@gmail.com">Email</a>
+                    <i class="fas fa-envelope"></i>
+                </a>
+            </div>
+
+        </div>
+    </section>      
+
 
 
     <footer>
@@ -203,42 +315,4 @@
     </script>
 
 </body>
-
-
-<section>
-    <h2>Sobre Mim</h2>
-    <p>Sou apaixonado por tecnologia, especialmente em áreas como segurança da informação, Desenvolvimento Web, Desenvolvimento de Software, IA e Data Science. Atualmente estudo Ciência da Computação na FPB e adoro criar projetos práticos para aprender cada vez mais.</p>
-</section>
-
-
-<section id="projects">
-    <h2>Meu projeto</h2>
-
-    <div class="project-card">
-        <h3>Sistema Acadêmico</h3>
-        <p>Projeto em Python com SQLite para gerenciar alunos, professores e disciplinas.</p>
-        <a href="https://github.com/willcodeTI/sistema-academico.git" target="_blank">Ver no GitHub</a>
-    </div>
-</section>
-
-<section id="contact">
-
-        <div class="contatos">
-            <p> Entre em contato comigo através dos links abaixo:</p>
-
-
-        <div class="contact-links">
-
-            <a href="https://www.linkedin.com/in/willian-vitor-silva-genuino-9b377b281" target="_blank">LinkedIn</a>
-                <i class="fab fa-linkedin"></i>
-
-            <a href="https://github.com/willcodeTI" target="_blank">GitHub</a>
-                <i class="fab fa-github"></i>
-
-            <a href="mailto:willianvt2005@gmail.com">Email</a>
-                <i class="fas fa-envelope"></i>
-            </a>
-        </div>
-    </div>
-</section>
 </html>
